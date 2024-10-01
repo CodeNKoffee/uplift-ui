@@ -1,4 +1,4 @@
-# upliftui
+# UpliftUI
 
 [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CodeNKoffee)
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/h4temsoliman)
@@ -31,7 +31,7 @@ yarn add upliftui
 
 ### Navigation
 
-To use the `Navigation` component from upliftui, first import it into your React project:
+To use the `Navigation` component from UpliftUI, first import it into your React project:
 
 ```tsx
 import { Navigation } from 'upliftui';
@@ -72,7 +72,7 @@ const App = () => {
 
 ### Footer
 
-To use the `Footer` component from upliftui, first import it into your React project:
+To use the `Footer` component from UpliftUI, first import it into your React project:
 
 ```tsx
 import { Footer } from 'upliftui';
@@ -154,7 +154,7 @@ const App = () => {
 export default App;
 ```
 
-This example demonstrates how to integrate the `Footer` component from `UpliftUi` into your application, providing a customizable footer for your website.
+This example demonstrates how to integrate the `Footer` component from UpliftUI into your application, providing a customizable footer for your website.
 
 ## Features
 
@@ -164,7 +164,7 @@ This example demonstrates how to integrate the `Footer` component from `UpliftUi
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request to contribute to the upliftui project.
+Contributions are welcome! Please open an issue or submit a pull request to contribute to the UpliftUI project.
 
 ## License
 
