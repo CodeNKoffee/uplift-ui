@@ -1,14 +1,29 @@
 import Link from "next/link";
-import { navLinks } from "../../constants";
 import Image from "next/image";
-import packshipLogo from "../../public/assets/PackShipLogo.svg";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-const isExternal = (url: string) => /^https?:\/\//.test(url);
-const isAnchorLink = (url: string) => /^#/.test(url);
+// Updated interfaces for props
+interface NavLink {
+  name: string;
+  href: string;
+  isSpecial?: boolean; 
+  specialColor?: string; 
+}
 
-export default function Navigation() {
+interface NavigationProps {
+  navLinks: NavLink[];
+  logo: {
+    src: string;
+    alt: string;
+  };
+  logoSize?: string,
+  defaultColor: string; 
+  hoverColor: string; 
+}
+
+// Updated component to accept new props
+export default function Navigation({ navLinks, logo, logoSize, defaultColor, hoverColor }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
@@ -19,16 +34,21 @@ export default function Navigation() {
     setIsOpen(false);
   };
 
+  const isExternal = (url: string) => /^https?:\/\//.test(url);
+  const isAnchorLink = (url: string) => /^#/.test(url);
+
   return (
     <nav>
       <div className="kontainer">
         <div className="w-full row flex justify-between items-center">
-          <Link href="/" className="w-1/3 text-3xl text-packship-purple font-bold">
+          <Link href="/" className="w-1/3 text-3xl font-bold" style={{ color: defaultColor }}>
             <figure>
-              <Image
-                src={packshipLogo}
-                alt="Packship logo"
-                width={150}
+              <Image 
+                src={logo.src} 
+                alt={logo.alt} 
+                width={150} 
+                height={150}
+                className={logoSize ? logoSize : ""}
               />
             </figure>
           </Link>
@@ -37,7 +57,7 @@ export default function Navigation() {
               <li key={index}>
                 <Link
                   href={isAnchorLink(link.href) ? `/${link.href}` : link.href}
-                  className={`${link.name === "Try It!" ? "bg-packship-purple text-white hover:bg-purple-700" : "text-white hover:text-packship-purple-lite"} font-bold px-8 py-4 rounded-full transition`}
+                  className={`font-bold px-8 py-4 rounded-full transition ${link.isSpecial ? `bg-${link.specialColor} text-white hover:bg-${hoverColor}` : `text-white hover:text-${hoverColor}`}`}
                   target={isExternal(link.href) ? "_blank" : "_self"}
                   rel={isExternal(link.href) ? "noopener noreferrer" : undefined}
                 >
@@ -47,12 +67,12 @@ export default function Navigation() {
             ))}
           </div>
           <div className="md:hidden w-1/3 relative flex justify-end items-end">
-            <button onClick={handleToggle} className="text-packship-purple-lite">
+            <button onClick={handleToggle} style={{ color: hoverColor }}>
               <FaBars size={24} />
             </button>
             {isOpen && (
               <div className="fixed top-0 right-0 w-full h-full bg-black bg-opacity-90 flex flex-col items-center justify-center z-50">
-                <button onClick={closeMenu} className="absolute top-4 right-8 text-packship-purple-lite">
+                <button onClick={closeMenu} style={{ color: hoverColor }}>
                   <FaTimes size={32} />
                 </button>
                 <div className="flex flex-col items-center">
@@ -60,7 +80,7 @@ export default function Navigation() {
                     <Link
                       key={index}
                       href={link.href}
-                      className={`${link.name === "Try It!" && "bg-packship-purple-lite"} w-full text-center text-white font-bold px-8 py-4 rounded-full my-4`}
+                      className={`w-full text-center text-white font-bold px-8 py-4 rounded-full my-4 ${link.isSpecial ? `bg-${link.specialColor}` : ''}`}
                       target={isExternal(link.href) ? "_blank" : "_self"}
                       rel={isExternal(link.href) ? "noopener noreferrer" : undefined}
                       onClick={closeMenu}
@@ -76,4 +96,4 @@ export default function Navigation() {
       </div>
     </nav>
   );
-}
+};
