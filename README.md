@@ -29,21 +29,132 @@ yarn add upliftui
 
 ## Usage
 
-Basic example usage:
+### Navigation
 
-```jsx
-import upliftui from 'upliftui';
+To use the `Navigation` component from upliftui, first import it into your React project:
 
-const example = () => {
+```tsx
+import { Navigation } from 'upliftui';
+```
+
+Then, you can use it in your component like so:
+
+```tsx
+const App = () => {
+  const navLinks = [
+    { name: "Home", href: "/", isSpecial: false },
+    { name: "About", href: "/about", isSpecial: false },
+    { name: "Services", href: "/services", isSpecial: true, specialColor: "blue-500" },
+    { name: "Contact", href: "/contact", isSpecial: false },
+  ];
+
+  const logo = {
+    src: "/path/to/logo.png",
+    alt: "Logo Alt Text",
+  };
+
   return (
     <div>
-      <upliftui />
+      <Navigation
+        navLinks={navLinks}
+        logo={logo}
+        logoSize="w-20 h-20" // Optional: Adjust logo size
+        defaultColor="text-gray-800"
+        hoverColor="text-blue-500"
+      />
+      {/* Other components */}
+    </div>
+  );
+};
+```
+
+---
+
+### Footer
+
+To use the `Footer` component from upliftui, first import it into your React project:
+
+```tsx
+import { Footer } from 'upliftui';
+```
+
+Then, you can use it in your component like so:
+
+```tsx
+import React from 'react';
+import { Footer } from 'upliftui';
+
+const App = () => {
+  const footerLinks = [
+    {
+      title: "Docs",
+      links: [
+        { 
+          name: "Develop", 
+          href: "/docs", 
+        },
+      ],
+    },
+    {
+      title: "Community",
+      links: [
+        { 
+          name: "Feedback", 
+          href: "mailto:packshipcli@gmail.com", 
+        },
+        { 
+          name: "LinkedIn", 
+          href: "https://linkedin.com/in/h4temsoliman", 
+        },
+        { 
+          name: "GitHub", 
+          href: "https://github.com/codenkoffee", 
+        },
+        { 
+          name: "X", 
+          href: "https://x.com/h4temsoliman", 
+        },
+        { 
+          name: "Portfolio", 
+          href: "https://hatemsoliman.dev", 
+        },
+      ],
+    },
+    {
+      title: "More",
+      links: [
+        { 
+          name: "Purchase", 
+          href: "#start-packshipping",
+        },
+        { 
+          name: "Contact", 
+          href: "mailto:packshipcli@gmail.com",
+        },
+        { 
+          name: "Fund Me", 
+          href: "https://paypal.me/h4temsoliman?country.x=EG&locale.x=en_US",
+        },
+      ],
+    },
+  ];
+
+  return (
+    <div>
+      <Footer
+        footerLinks={footerLinks}
+        brandName="Uplift UI"
+        defaultColor="text-blue-500"
+        footerLogo="/path/to/logo.png"
+      />
     </div>
   );
 };
 
-export default example;
+export default App;
 ```
+
+This example demonstrates how to integrate the `Footer` component from `UpliftUi` into your application, providing a customizable footer for your website.
 
 ## Features
 
