@@ -27,3 +27,8 @@ declare module 'Footer' {
   const Footer: React.ComponentType<any>;
   export default Footer;
 }
+
+declare module "*.css" {
+  const content: { [className: string]: string };
+  export default content;
+}
