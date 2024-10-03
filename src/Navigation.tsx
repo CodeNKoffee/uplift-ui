@@ -1,6 +1,6 @@
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 // Updated interfaces for props
@@ -96,4 +96,4 @@ export default function Navigation({ navLinks, logo, logoSize, defaultColor, hov
       </div>
     </nav>
   );
-};
+}
