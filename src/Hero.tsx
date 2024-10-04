@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
-import CommandPrompt from "./code-blocks/CommandPrompt";
+
+const CommandPrompt = lazy(() => import("./code-blocks/CommandPrompt"));
 
 interface Highlight {
   text: string;
@@ -16,6 +17,7 @@ interface HeaderOneProps {
 
 interface CTAButtonProps {
   text: string;
+  link: string;
   backgroundColor: string;
   textColor: string;
 }
@@ -46,7 +48,7 @@ export default function Hero({ headerOne, headerTwo, ctaButton, defaultColor, te
   return (
     <section className="mt-24">
       <div className="kontainer text-center">
-        <div className="row text-md sm:text-xl text-white flex flex-col items-center gap-8">
+        <div className="row text-md sm:text-xl flex flex-col items-center gap-8">
           {headerOne && (
             <h1 
               data-aos={animate && "fade-up"}
@@ -65,21 +67,18 @@ export default function Hero({ headerOne, headerTwo, ctaButton, defaultColor, te
               </React.Fragment>
             ))}
           </h2>
-          <p
-            data-aos={animate && "fade-up"}
-            className=" text-md text-white font-regular mt-4 py-2 px-4 rounded-full"
-          >
-            Focus more on <span className="text-packship-purple-lite font-bold">coding</span> and less on <span className="text-packship-purple-lite font-bold">managing package releases</span>. <span className="text-packship-purple-lite font-bold">Packship</span> makes <span className="text-packship-purple-lite font-bold">shipping npm packages</span> easier and faster.
-          </p>
-          {terminalCommand && <CommandPrompt data-aos={animate && "fade-up"} command={terminalCommand} />}
-          <span className="text-sm text-white">Early bird special: <span className="text-green-400 font-bold">91% off</span></span>
+          {terminalCommand && (
+            <Suspense fallback={<div>Loading...</div>}>
+              <CommandPrompt command={terminalCommand} />
+            </Suspense>
+          )}
           <button 
             type="button" 
             data-aos={animate && "fade-up"}
           >
             <Link
-              href="#start-packshipping"
-              className="bg-packship-purple hover:bg-purple-700 rounded-full text-lg lg:text-2xl text-framify-grey px-8 py-4 font-bold mt-24 transition ease-in-out"
+              href={ctaButton.link}
+              className={`${ctaButton.backgroundColor} ${ctaButton.textColor} rounded-full text-lg lg:text-2xl px-8 py-4 font-bold mt-24 transition ease-in-out`}
             >
               {ctaButton.text}
             </Link>
