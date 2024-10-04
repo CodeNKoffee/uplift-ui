@@ -1,5 +1,6 @@
 import path from 'path';
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+import CompressionWebpackPlugin from 'compression-webpack-plugin';
 
 export default {
   mode: 'production',
@@ -61,9 +62,20 @@ export default {
   },
   plugins: [
     new BundleAnalyzerPlugin(),
+    new CompressionWebpackPlugin({
+      test: /\.(js|css)$/,
+      algorithm: 'brotliCompress',
+      compressionOptions: { level: 11 },
+    }),
   ],
   performance: {
     maxAssetSize: 512000,  // Increase size limit to 500KB
     maxEntrypointSize: 512000,
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+    minimize: true,
+  }
 };
