@@ -1,7 +1,7 @@
 import React from "react";
 import "aos/dist/aos.css";
-import KeyFeature from "./internal/KeyFeature";
-import SectionHeader from "./internal/SectionHeader";
+import KeyFeature from "../internal/KeyFeature";
+import SectionHeader from "../internal/SectionHeader";
 
 // Define prop types for Features component
 interface Feature {
