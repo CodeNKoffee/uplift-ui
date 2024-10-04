@@ -7,7 +7,7 @@ export default {
   entry: './src/index.tsx',
   output: {
     path: path.resolve('dist'),
-    filename: 'index.js',
+    filename: '[name].bundle.js',  // Using [name] to create unique filenames
     library: {
       type: 'umd',
       name: 'upliftui',
@@ -75,7 +75,16 @@ export default {
   optimization: {
     splitChunks: {
       chunks: 'all',
+      automaticNameDelimiter: '-',
+      name: (module, chunks, cacheGroupKey) => {
+        const moduleFileName = module
+          .identifier()
+          .split('/')
+          .reduceRight((item) => item);
+        const allChunksNames = chunks.map((item) => item.name).join('-');
+        return `${cacheGroupKey}-${allChunksNames}-${moduleFileName}`;
+      },
     },
     minimize: true,
-  }
+  },
 };
