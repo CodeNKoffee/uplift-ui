@@ -1,4 +1,5 @@
 import path from 'path';
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 export default {
   mode: 'production',
@@ -57,5 +58,12 @@ export default {
   externals: {
     react: 'react',
     'react-dom': 'react-dom',
+  },
+  plugins: [
+    new BundleAnalyzerPlugin(),
+  ],
+  performance: {
+    maxAssetSize: 512000,  // Increase size limit to 500KB
+    maxEntrypointSize: 512000,
   },
 };
