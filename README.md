@@ -1,4 +1,4 @@
-# VIPUI
+# AnajUI
 
 [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CodeNKoffee)
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/h4temsoliman)
@@ -7,7 +7,7 @@
 
 ## Introduction
 
-**VIP UI** is a React component library offering customizable elements for landing pages, such as Hero sections, Features, and Footers. It empowers developers to build responsive, modern designs effortlessly, while maintaining flexibility and brand uniqueness.
+**AnajUI** is a React component library offering customizable elements for landing pages, such as Hero sections, Features, and Footers. It empowers developers to build responsive, modern designs effortlessly, while maintaining flexibility and brand uniqueness.
 
 ## Supported React.js
 
@@ -15,26 +15,26 @@ This package supports React.js `18.2.0` and above.
 
 ## Installation
 
-To install vip-ui, simply run:
+To install anaj-ui, simply run:
 
 ```bash
-npm install vip-ui
+npm install anaj-ui
 ```
 
 Or with Yarn:
 
 ```bash
-yarn add vip-ui
+yarn add anaj-ui
 ```
 
 ## Usage
 
 ### Navigation
 
-To use the `Navigation` component from VIPUI, first import it into your React project:
+To use the `Navigation` component from AnajUI, first import it into your React project:
 
 ```tsx
-import { Navigation } from 'vip-ui';
+import { Navigation } from 'anaj-ui';
 ```
 
 Then, you can use it in your component like so:
@@ -72,17 +72,17 @@ const App = () => {
 
 ### Footer
 
-To use the `Footer` component from VIPUI, first import it into your React project:
+To use the `Footer` component from AnajUI, first import it into your React project:
 
 ```tsx
-import { Footer } from 'vip-ui';
+import { Footer } from 'anaj-ui';
 ```
 
 Then, you can use it in your component like so:
 
 ```tsx
 import React from 'react';
-import { Footer } from 'vip-ui';
+import { Footer } from 'anaj-ui';
 
 const App = () => {
   const footerLinks = [
@@ -143,7 +143,7 @@ const App = () => {
     <div>
       <Footer
         footerLinks={footerLinks}
-        brandName="VIP UI"
+        brandName="AnajUI"
         defaultColor="text-blue-500"
         footerLogo="/path/to/logo.png"
       />
@@ -154,7 +154,7 @@ const App = () => {
 export default App;
 ```
 
-This example demonstrates how to integrate the `Footer` component from VIP UI into your application, providing a customizable footer for your website.
+This example demonstrates how to integrate the `Footer` component from AnajUI into your application, providing a customizable footer for your website.
 
 ## Features
 
@@ -164,7 +164,7 @@ This example demonstrates how to integrate the `Footer` component from VIP UI in
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request to contribute to the VIP UI project.
+Contributions are welcome! Please open an issue or submit a pull request to contribute to the AnajUI project.
 
 ## License
 

@@ -2,7 +2,7 @@
 
 ## Our Commitment
 
-VIP UI is dedicated to providing a welcoming and harassment-free experience for everyone. We encourage open dialogue, collaboration, and respectful behavior among contributors.
+AnajUI is dedicated to providing a welcoming and harassment-free experience for everyone. We encourage open dialogue, collaboration, and respectful behavior among contributors.
 
 ## Expected Behavior
 
@@ -25,4 +25,4 @@ If you encounter any behavior that violates this Code of Conduct, please report 
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may result in temporary or permanent consequences, such as a warning, temporary ban, or removal from the project.
 
-Let's work together to maintain a positive and inclusive environment for everyone involved in VIP UI.
+Let's work together to maintain a positive and inclusive environment for everyone involved in AnajUI.

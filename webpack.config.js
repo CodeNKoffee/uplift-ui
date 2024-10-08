@@ -11,7 +11,7 @@ export default {
     filename: '[name].[contenthash].js',
     library: {
       type: 'umd',
-      name: 'vip-ui',
+      name: 'anaj-ui',
     },
     globalObject: 'this',
     publicPath: '/',
