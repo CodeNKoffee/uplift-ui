@@ -11,7 +11,7 @@ export default {
     filename: '[name].[contenthash].js',
     library: {
       type: 'umd',
-      name: 'upliftui',
+      name: 'vip-ui',
     },
     globalObject: 'this',
     publicPath: '/',

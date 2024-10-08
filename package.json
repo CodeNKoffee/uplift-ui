@@ -1,7 +1,7 @@
 {
-  "name": "upliftui",
+  "name": "vip-ui",
   "version": "0.1.0",
-  "description": "**Uplift UI** is a React component library offering customizable elements for landing pages, such as Hero sections, Features, and Footers. It empowers developers to build responsive, modern designs effortlessly, while maintaining flexibility and brand uniqueness.",
+  "description": "**VIP UI** is a React component library offering customizable elements for landing pages, such as Hero sections, Features, and Footers. It empowers developers to build responsive, modern designs effortlessly, while maintaining flexibility and brand uniqueness.",
   "serialNumber": "PACKSHIP-6efbfe44ea52a27da3d7cc62e656ac13eb3a8a9714db32360c322e2473cec077",
   "email": "hatemthedev@gmail.com",
   "main": "dist/index.js",

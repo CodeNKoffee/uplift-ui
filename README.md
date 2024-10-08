@@ -1,4 +1,4 @@
-# UpliftUI
+# VIPUI
 
 [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CodeNKoffee)
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/h4temsoliman)
@@ -7,7 +7,7 @@
 
 ## Introduction
 
-**Uplift UI** is a React component library offering customizable elements for landing pages, such as Hero sections, Features, and Footers. It empowers developers to build responsive, modern designs effortlessly, while maintaining flexibility and brand uniqueness.
+**VIP UI** is a React component library offering customizable elements for landing pages, such as Hero sections, Features, and Footers. It empowers developers to build responsive, modern designs effortlessly, while maintaining flexibility and brand uniqueness.
 
 ## Supported React.js
 
@@ -15,26 +15,26 @@ This package supports React.js `18.2.0` and above.
 
 ## Installation
 
-To install upliftui, simply run:
+To install vip-ui, simply run:
 
 ```bash
-npm install upliftui
+npm install vip-ui
 ```
 
 Or with Yarn:
 
 ```bash
-yarn add upliftui
+yarn add vip-ui
 ```
 
 ## Usage
 
 ### Navigation
 
-To use the `Navigation` component from UpliftUI, first import it into your React project:
+To use the `Navigation` component from VIPUI, first import it into your React project:
 
 ```tsx
-import { Navigation } from 'upliftui';
+import { Navigation } from 'vip-ui';
 ```
 
 Then, you can use it in your component like so:
@@ -72,17 +72,17 @@ const App = () => {
 
 ### Footer
 
-To use the `Footer` component from UpliftUI, first import it into your React project:
+To use the `Footer` component from VIPUI, first import it into your React project:
 
 ```tsx
-import { Footer } from 'upliftui';
+import { Footer } from 'vip-ui';
 ```
 
 Then, you can use it in your component like so:
 
 ```tsx
 import React from 'react';
-import { Footer } from 'upliftui';
+import { Footer } from 'vip-ui';
 
 const App = () => {
   const footerLinks = [
@@ -143,7 +143,7 @@ const App = () => {
     <div>
       <Footer
         footerLinks={footerLinks}
-        brandName="Uplift UI"
+        brandName="VIP UI"
         defaultColor="text-blue-500"
         footerLogo="/path/to/logo.png"
       />
@@ -154,7 +154,7 @@ const App = () => {
 export default App;
 ```
 
-This example demonstrates how to integrate the `Footer` component from UpliftUI into your application, providing a customizable footer for your website.
+This example demonstrates how to integrate the `Footer` component from VIP UI into your application, providing a customizable footer for your website.
 
 ## Features
 
@@ -164,7 +164,7 @@ This example demonstrates how to integrate the `Footer` component from UpliftUI 
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request to contribute to the UpliftUI project.
+Contributions are welcome! Please open an issue or submit a pull request to contribute to the VIP UI project.
 
 ## License
 
