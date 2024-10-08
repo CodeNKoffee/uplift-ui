@@ -63,4 +63,3 @@ export default function Footer({ footerLinks, brandName, defaultColor, footerLog
     </footer>
   );
 }
-

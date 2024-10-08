@@ -1,13 +1,14 @@
 import path from 'path';
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import CompressionWebpackPlugin from 'compression-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 
 export default {
   mode: 'production',
   entry: './src/index.tsx',
   output: {
     path: path.resolve('dist'),
-    filename: '[name].bundle.js',  // Using [name] to create unique filenames
+    filename: '[name].[contenthash].js',
     library: {
       type: 'umd',
       name: 'upliftui',
@@ -47,7 +48,7 @@ export default {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/[name][ext]',
+          filename: 'assets/[name].[hash][ext]',
         },
       },
       {
@@ -69,22 +70,25 @@ export default {
     }),
   ],
   performance: {
-    maxAssetSize: 512000,  // Increase size limit to 500KB
+    maxAssetSize: 512000,
     maxEntrypointSize: 512000,
   },
   optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
     splitChunks: {
       chunks: 'all',
-      automaticNameDelimiter: '-',
-      name: (module, chunks, cacheGroupKey) => {
-        const moduleFileName = module
-          .identifier()
-          .split('/')
-          .reduceRight((item) => item);
-        const allChunksNames = chunks.map((item) => item.name).join('-');
-        return `${cacheGroupKey}-${allChunksNames}-${moduleFileName}`;
+      maxInitialRequests: Infinity,
+      minSize: 0,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name(module) {
+            const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+            return `npm.${packageName.replace('@', '')}`;
+          },
+        },
       },
     },
-    minimize: true,
   },
 };
