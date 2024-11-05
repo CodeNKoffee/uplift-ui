@@ -19,7 +19,7 @@ AnajUI is dedicated to providing a welcoming and harassment-free experience for 
 
 ## Reporting Issues
 
-If you encounter any behavior that violates this Code of Conduct, please report it by opening an issue or contacting the maintainers directly. We will review and address all reports promptly and fairly.
+If you encounter any behavior that violates this Code of Conduct, please report it by opening an issue or contacting the maintainers directly. We will review and address all reports promptly and fairly as fast as possible.
 
 ## Enforcement
 
